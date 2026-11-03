@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আফসালের ফ্যাশন</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+header {
+    background: #145c43;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+nav {
+    background: #104632;
+    padding: 13px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 15px;
+    background: #e1f0e7;
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: #145c43;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+button {
+    background: #145c43;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.products {
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    width: 260px;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.product .emoji {
+    font-size: 65px;
+}
+
+.product h3 {
+    color: #145c43;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d35400;
+}
+
+.about {
+    background: white;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+footer {
+    background: #145c43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>আফসালের ফ্যাশন</h1>
+    <p>আপনার পছন্দের পোশাক, সাশ্রয়ী দামে</p>
+</header>
+
+<nav>
+    <a href="#home">হোম</a>
+    <a href="#products">পণ্য</a>
+    <a href="#about">আমাদের সম্পর্কে</a>
+    <a href="#contact">যোগাযোগ</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>স্বাগতম আফসালের ফ্যাশনে!</h2>
+    <p>ছেলে ও মেয়েদের সুন্দর সুন্দর পোশাক কিনুন আমাদের কাছ থেকে।</p>
+    <a href="#products">
+        <button>পণ্য দেখুন</button>
+    </a>
+</section>
+
+<section class="products" id="products">
+    <h2>আমাদের পোশাকের কালেকশন</h2>
+
+    <div class="product-container">
+
+        <div class="product">
+            <div class="emoji">👕</div>
+            <h3>টি-শার্ট</h3>
+            <p>সুন্দর ও আরামদায়ক টি-শার্ট</p>
+            <p class="price">৳ ৪৫০</p>
+            <button onclick="alert('অর্ডার করতে আমাদের ফোন করুন')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="emoji">👗</div>
+            <h3>থ্রি-পিস</h3>
+            <p>আকর্ষণীয় ডিজাইনের থ্রি-পিস</p>
+            <p class="price">৳ ১,২৫০</p>
+            <button onclick="alert('অর্ডার করতে আমাদের ফোন করুন')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="emoji">👔</div>
+            <h3>ফরমাল শার্ট</h3>
+            <p>স্মার্ট ও সুন্দর ফরমাল শার্ট</p>
+            <p class="price">৳ ৭৫০</p>
+            <button onclick="alert('অর্ডার করতে আমাদের ফোন করুন')">
+                অর্ডার করুন
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>
+        আফসালের ফ্যাশনে আপনাকে স্বাগতম।
+        আমরা আপনাদের জন্য নিয়ে এসেছি সুন্দর ও
+        মানসম্মত পোশাক।
+    </p>
+</section>
+
+<footer id="contact">
+    <h2>যোগাযোগ</h2>
+    <p>দোকান: আফসালের ফ্যাশন</p>
+    <p>মোবাইল: আপনার ফোন নম্বর এখানে দিন</p>
+    <p>© 2026 Afsal Fashion</p>
+</footer>
+
+</body>
+</html>
