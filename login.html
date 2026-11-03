@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আফসালের ফ্যাশন - Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            width: 90%;
+            max-width: 380px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #087b45;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 7px;
+            background: #087b45;
+            color: white;
+            font-size: 17px;
+        }
+
+        #message {
+            color: red;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h1>আফসালের ফ্যাশন</h1>
+    <p>লগইন করে ওয়েবসাইটে প্রবেশ করুন</p>
+
+    <input type="email" id="email"
+           placeholder="আপনার ইমেইল লিখুন">
+
+    <input type="password" id="password"
+           placeholder="আপনার পাসওয়ার্ড লিখুন">
+
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Create Account</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+    const SUPABASE_URL = "YOUR_SUPABASE_URL";
+    const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+    async function login() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("message");
+
+        if (!email || !password) {
+            message.innerText = "ইমেইল ও পাসওয়ার্ড লিখুন!";
+            return;
+        }
+
+        const { error } = await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+        });
+
+        if (error) {
+            message.innerText = "লগইন ব্যর্থ: " + error.message;
+        } else {
+            window.location.href = "index.html";
+        }
+    }
+
+    async function signup() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").valu
